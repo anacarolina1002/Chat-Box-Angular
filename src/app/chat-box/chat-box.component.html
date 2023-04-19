@@ -1,0 +1,30 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Chat Box</title>
+    <header class="fixed-header">
+        <h1>Chat box</h1>
+    </header>
+    <div class="chat-container">
+        <div class="chat-box">
+            <div class="chat-header">
+                <h2>Atendimento</h2>
+                <span class="online"></span>
+            </div>
+            <div class="chat-body">
+                <ul class="messages">
+                    <li *ngFor="let message of items" class = "message">
+                        <div class="message outgoing">
+                            <div class="text">{{message}}</div>
+                        </div>   
+                    </li>
+                </ul>
+            </div>
+            <form class="chat-footer" (ngSubmit)="enviar()" method="post">
+                <input type="text" placeholder="Digite aqui..." [(ngModel)]="msgInput" name="msgInput"/>
+                <button type = "submit">Enviar</button>
+                <button (click)="deleting()" id="limpar" >Limpar</button>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        Created by <a href="https://www.instagram.com/anacarolinamachad0_/">Ana Carolina Machado</a> e <a href="https://www.instagram.com/artur.barbosa_b/">Artur Barbosa</a>
+    </footer>
